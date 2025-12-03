@@ -1,0 +1,28 @@
+name: cart
+replicaCount: 1
+
+image:
+  repository: 630019796862.dkr.ecr.us-east-1.amazonaws.com/haddar-retail-store-cart
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "250m"
+  limits:
+    memory: "1Gi"
+    cpu: "500m"
+
+env:
+  - name: REDIS_ENDPOINT
+    value: "redis-master.retail-store.svc.cluster.local"
+  - name: CARTS_DYNAMODB_TABLENAME
+    value: "haddar-retail-store-cart-table"
+  - name: AWS_DEFAULT_REGION
+    value: "us-east-1"

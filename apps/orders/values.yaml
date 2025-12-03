@@ -1,0 +1,30 @@
+name: orders
+replicaCount: 1
+
+image:
+  repository: 630019796862.dkr.ecr.us-east-1.amazonaws.com/haddar-retail-store-orders
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "250m"
+  limits:
+    memory: "1Gi"
+    cpu: "500m"
+
+env:
+  - name: DB_ENDPOINT
+    value: "postgresql.retail-store.svc.cluster.local"
+  - name: DB_NAME
+    value: "catalog"
+  - name: DB_USER
+    value: "postgres"
+  - name: DB_PASSWORD
+    value: "postgres"

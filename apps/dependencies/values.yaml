@@ -1,0 +1,30 @@
+postgresql:
+  auth:
+    username: postgres
+    password: postgres
+    database: catalog
+  primary:
+    persistence:
+      enabled: false
+
+redis:
+  auth:
+    enabled: false
+  master:
+    persistence:
+      enabled: false
+  replica:
+    persistence:
+      enabled: false
+
+rabbitmq:
+  auth:
+    username: guest
+    password: guest
+  persistence:
+    enabled: false
+  replicaCount: 1
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 250m
