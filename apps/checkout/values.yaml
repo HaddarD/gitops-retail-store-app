@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: 630019796862.dkr.ecr.us-east-1.amazonaws.com/haddar-retail-store-checkout
-  tag: "394759ef0f9588133b763b31b88e0c9634f575da"
+  tag: "9b2bdf31d6526636c4ec3074168361610365cb3b"
   pullPolicy: Always
 
 service:
