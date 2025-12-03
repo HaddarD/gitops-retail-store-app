@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: 630019796862.dkr.ecr.us-east-1.amazonaws.com/haddar-retail-store-catalog
-  tag: "188efde2acd15c15410c191150278eb851002e2a"
+  tag: "394759ef0f9588133b763b31b88e0c9634f575da"
   pullPolicy: Always
 
 service:
